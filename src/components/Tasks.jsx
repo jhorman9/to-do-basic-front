@@ -5,7 +5,7 @@ const Tasks = ({ data, getAllToDo }) => {
 
     const UpdateData = (e) => {
     
-    axios.put(`http://localhost:8000/todo/${data.id}`, { isCompleted: e.target.checked })
+    axios.put(`https://to-do-crud-3kmn-dev.fl0.io/todo/${data.id}`, { isCompleted: e.target.checked })
         .then(res => {
             console.log(res.data);
             getAllToDo();
@@ -14,7 +14,7 @@ const Tasks = ({ data, getAllToDo }) => {
     };
 
     const deleteData = () => {
-        axios.delete(`http://localhost:8000/todo/${data.id}`)
+        axios.delete(`https://to-do-crud-3kmn-dev.fl0.io/todo/${data.id}`)
         .then(res => {
             console.log(res.data);
             getAllToDo();
@@ -34,7 +34,7 @@ const Tasks = ({ data, getAllToDo }) => {
     </div>
     <div className="card-footer">
         <div class="form-check">
-            <input onChange={UpdateData} checked={data.isCompleted} class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
+            <input onChange={UpdateData} checked={data.isCompleted} className="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
             <label className="form-check-label">
                 Tarea completada
             </label>

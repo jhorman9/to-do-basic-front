@@ -8,7 +8,7 @@ const CreateTask = () => {
   const { register, handleSubmit, reset } = useForm();
 
   const submit = (data) => {
-    axios.post('http://localhost:8000/todo', data)
+    axios.post('https://to-do-crud-3kmn-dev.fl0.io/todo', data)
         .then(res => {
             reset();
         })
